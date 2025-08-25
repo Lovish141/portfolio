@@ -1,12 +1,12 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, easeOut } from 'framer-motion';
 import { useRef } from 'react';
 import { portfolioData } from '@/data/portfolioData';
 
 const About = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.1 });
+  const isInView = useInView(ref, { once: true });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -24,7 +24,7 @@ const About = () => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.8, ease: "easeOut" },
+  transition: { duration: 0.8, ease: easeOut },
     },
   };
 

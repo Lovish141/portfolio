@@ -1,13 +1,13 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { motion, useInView, easeOut } from 'framer-motion';
+import { useRef } from 'react';
 import { EnvelopeIcon, PhoneIcon, MapPinIcon, CalendarDaysIcon } from '@heroicons/react/24/outline';
 import { portfolioData } from '@/data/portfolioData';
 
 const Contact = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.1 });
+  const isInView = useInView(ref, { once: true });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -25,7 +25,7 @@ const Contact = () => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.8, ease: "easeOut" },
+  transition: { duration: 0.8, ease: easeOut },
     },
   };
 
@@ -140,7 +140,7 @@ const Contact = () => {
                 {Object.entries(portfolioData.social).map(([platform, url], index) => (
                   <motion.a
                     key={platform}
-                    href={url}
+                    href={url.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-14 h-14 bg-gray-900/30 backdrop-blur-sm border border-gray-600/20 rounded-full flex items-center justify-center hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-300 transition-all duration-300 group"

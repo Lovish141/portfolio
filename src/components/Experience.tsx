@@ -1,13 +1,13 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, easeOut } from 'framer-motion';
 import { useRef } from 'react';
 import { BriefcaseIcon, CalendarIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import { portfolioData } from '@/data/portfolioData';
 
 const Experience = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.1 });
+  const isInView = useInView(ref, { once: true });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -25,7 +25,7 @@ const Experience = () => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.8, ease: "easeOut" },
+  transition: { duration: 0.8, ease: easeOut },
     },
   };
 
@@ -33,11 +33,20 @@ const Experience = () => {
     hidden: { height: 0 },
     visible: {
       height: '100%',
-      transition: { duration: 2, ease: "easeOut" },
+      transition: { duration: 2, ease: easeOut },
     },
   };
 
-  const ExperienceCard = ({ experience, index, isLast }: { experience: any; index: number; isLast: boolean }) => {
+  type ExperienceType = {
+    position: string;
+    company: string;
+    startDate: string;
+    endDate: string;
+    location: string;
+    description: string[];
+    technologies: string[];
+  };
+  const ExperienceCard = ({ experience, index, isLast }: { experience: ExperienceType; index: number; isLast: boolean }) => {
     return (
       <motion.div
         className="relative flex items-start space-x-6 pb-12"

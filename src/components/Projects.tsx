@@ -1,13 +1,13 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, easeOut } from 'framer-motion';
 import { useRef, useState } from 'react';
 import {  CodeBracketIcon } from '@heroicons/react/24/outline';
 import { portfolioData } from '@/data/portfolioData';
 
 const Projects = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.1 });
+  const isInView = useInView(ref, { once: true });
   const [filter, setFilter] = useState('all');
 
   const categories = ['all', ...Array.from(new Set(portfolioData.projects.map(project => project.category)))];
@@ -32,7 +32,7 @@ const Projects = () => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.8, ease: "easeOut" },
+  transition: { duration: 0.8, ease: easeOut },
     },
   };
 
@@ -41,11 +41,21 @@ const Projects = () => {
     visible: {
       scale: 1,
       opacity: 1,
-      transition: { duration: 0.6, ease: "easeOut" },
+  transition: { duration: 0.6, ease: easeOut },
     },
   };
 
-  const ProjectCard = ({ project, index }: { project: any; index: number }) => {
+  type ProjectType = {
+    id: string | number;
+    category: string;
+    technologies: string[];
+    title: string;
+    description: string;
+    liveUrl: string;
+    githubUrl: string;
+    featured?: boolean;
+  };
+  const ProjectCard = ({ project, index }: { project: ProjectType; index: number }) => {
     return (
       <motion.div
         className="bg-gray-900/30 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-600/20 group"
@@ -101,7 +111,7 @@ const Projects = () => {
           <div className="flex items-center justify-between mb-2">
             <span className="text-cyan-400 text-sm font-medium">{project.category}</span>
             <div className="flex space-x-1">
-              {project.technologies.slice(0, 3).map((tech, i) => (
+              {project.technologies.slice(0, 3).map((tech: string, i: number) => (
                 <div key={i} className="w-2 h-2 bg-cyan-400 rounded-full"></div>
               ))}
             </div>
@@ -183,7 +193,7 @@ const Projects = () => {
               className="text-white/70 mt-4 max-w-2xl mx-auto"
               variants={itemVariants}
             >
-              Here are some of the projects I've worked on. Each one represents a unique challenge and solution.
+              Here are some of the projects I&apos;ve worked on. Each one represents a unique challenge and solution.
             </motion.p>
           </motion.div>
 
@@ -235,7 +245,7 @@ const Projects = () => {
                 Interested in working together?
               </h3>
               <p className="text-white/70 mb-6 max-w-md mx-auto">
-                I'm always open to discussing new opportunities and exciting projects.
+                I&apos;m always open to discussing new opportunities and exciting projects.
               </p>
               <motion.button
                 className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-3 rounded-full font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
@@ -256,7 +266,7 @@ const Projects = () => {
             className="mt-12 text-center"
           >
             <motion.a
-              href={portfolioData.social.github}
+              href={portfolioData.social.github.url}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 text-white/60 hover:text-cyan-400 transition-colors"

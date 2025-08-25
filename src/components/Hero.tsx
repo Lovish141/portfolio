@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, easeOut } from 'framer-motion';
 import { ArrowDownIcon } from '@heroicons/react/24/outline';
 import { portfolioData } from '@/data/portfolioData';
 import SocialIcon from './SocialIcon';
@@ -37,7 +37,7 @@ const Hero = () => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] },
+  transition: { duration: 0.8, ease: easeOut },
     },
   };
 
@@ -47,7 +47,7 @@ const Hero = () => {
       transition: {
         duration: 4,
         repeat: Infinity,
-        ease: [0.4, 0.0, 0.6, 1.0],
+        ease: easeOut,
       },
     },
   };

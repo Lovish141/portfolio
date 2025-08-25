@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { portfolioData } from '@/data/portfolioData';
 
@@ -9,23 +9,37 @@ const Navigation = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const navItems = [
+  const navItems = useMemo(() => [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
     { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
     { id: 'experience', label: 'Experience' },
     { id: 'contact', label: 'Contact' },
-  ];
+  ], []);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+
+      // Find the section currently in view
+      let foundSection = 'home';
+      for (const item of navItems) {
+        const el = document.getElementById(item.id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 80 && rect.bottom > 80) {
+            foundSection = item.id;
+            break;
+          }
+        }
+      }
+      setActiveSection(foundSection);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [navItems]);
 
   const scrollToSection = (sectionId: string) => {
     if (sectionId === 'home') {
@@ -69,7 +83,7 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
+            {navItems.map((item: {id: string, label: string}) => (
               <motion.button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
@@ -125,7 +139,7 @@ const Navigation = () => {
               transition={{ duration: 0.3 }}
             >
               <div className="px-6 py-4 space-y-4">
-                {navItems.map((item, index) => (
+                {navItems.map((item: {id: string, label: string}, index: number) => (
                   <motion.button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
