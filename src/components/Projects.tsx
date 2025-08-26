@@ -3,7 +3,9 @@
 import { motion, useInView, easeOut } from 'framer-motion';
 import { useRef, useState } from 'react';
 import {  CodeBracketIcon } from '@heroicons/react/24/outline';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import { portfolioData } from '@/data/portfolioData';
+import Image from 'next/image';
 
 const Projects = () => {
   const ref = useRef(null);
@@ -46,14 +48,15 @@ const Projects = () => {
   };
 
   type ProjectType = {
-    id: string | number;
-    category: string;
-    technologies: string[];
-    title: string;
-    description: string;
-    liveUrl: string;
-    githubUrl: string;
-    featured?: boolean;
+  id: string | number;
+  category: string;
+  technologies: string[];
+  title: string;
+  description: string;
+  image: string;
+  liveUrl: string;
+  githubUrl: string;
+  featured?: boolean;
   };
   const ProjectCard = ({ project, index }: { project: ProjectType; index: number }) => {
     return (
@@ -68,14 +71,25 @@ const Projects = () => {
           boxShadow: "0 25px 50px -12px rgba(147, 51, 234, 0.25)"
         }}
       >
-        {/* Project Image Placeholder */}
-        <div className="relative h-48 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 overflow-hidden">
+        {/* Project Image */}
+        <div className="relative h-64 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 overflow-hidden">
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            className="object-cover object-center transition-opacity duration-300 group-hover:opacity-100 opacity-80"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            priority={index === 0}
+          />
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-6xl opacity-20">
-              {project.category === 'Frontend' ? '🎨' : project.category === 'Backend' ? '⚙️' : '🚀'}
+          {/* Only show icon if no image is present */}
+          {!project.image && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-6xl opacity-20">
+                {project.category === 'Frontend' ? '🎨' : project.category === 'Backend' ? '⚙️' : '🚀'}
+              </div>
             </div>
-          </div>
+          )}
           {project.featured && (
             <div className="absolute top-4 right-4">
               <span className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-xs px-2 py-1 rounded-full font-medium">
@@ -88,11 +102,11 @@ const Projects = () => {
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition-colors"
+              className="bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition-colors flex items-center justify-center"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              {/* <ExternalLinkIcon className="w-5 h-5" /> */}
+              <ArrowTopRightOnSquareIcon className="w-5 h-5" />
             </motion.a>
             <motion.a
               href={project.githubUrl}

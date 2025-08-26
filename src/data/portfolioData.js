@@ -1,4 +1,4 @@
-// Portfolio Data - Update this file with your information
+
 export const portfolioData = {
   // Personal Information
   personal: {
@@ -8,7 +8,7 @@ export const portfolioData = {
     email: "slovish11sharma@gmail.com",
     phone: "+91 97798 98119",
     location: "Bangalore, India",
-    website: "https://yourwebsite.com",
+    website: "https://lovish.dev/",
     linkedIn: "https://www.linkedin.com/in/lovish1sharma/",
     github: "https://github.com/Lovish141",
     bio: "A full-stack engineer with expertise in frontend and backend development. Skilled in building scalable, user-friendly applications and optimizing system performance. Experienced in enhancing search functionality, developing interactive tools, and automating workflows to improve efficiency. Passionate about solving complex problems, continuous learning, and contributing to innovative software solutions in a collaborative environment.",
@@ -17,77 +17,69 @@ export const portfolioData = {
   // Skills
   skills: {
     frontend: [
-      { name: "React", level: 90, icon: "⚛️" },
-      { name: "Next.js", level: 85, icon: "▲" },
-      { name: "TypeScript", level: 80, icon: "📘" },
-      { name: "JavaScript", level: 95, icon: "🟡" },
-      { name: "HTML/CSS", level: 90, icon: "🎨" },
-      { name: "Tailwind CSS", level: 85, icon: "💨" },
+      { name: "HTML", icon: "🌐" },
+      { name: "CSS", icon: "🎨" },
+      { name: "JavaScript", icon: "�" },
+      { name: "React.js", icon: "⚛️" },
+      { name: "Next.js", icon: "▲" },
+      { name: "Vue.js", icon: "�" },
     ],
     backend: [
-      { name: "Node.js", level: 85, icon: "🟢" },
-      { name: "Python", level: 80, icon: "🐍" },
-      { name: "Express", level: 85, icon: "🚀" },
-      { name: "PostgreSQL", level: 75, icon: "🗄️" },
-      { name: "MongoDB", level: 70, icon: "🍃" },
-      { name: "REST APIs", level: 90, icon: "🔌" },
+      { name: "SQL", icon: "�️" },
+      { name: "MongoDB", icon: "🍃" },
+      { name: ".NET Framework", icon: "�" },
+      { name: "Node.js", icon: "�" },
+      { name: "Express.js", icon: "�" },
+      { name: "PostgreSQL", icon: "🐘" },
+      { name: "Prisma", icon: "�" },
     ],
-    tools: [
-      { name: "Git", level: 90, icon: "📂" },
-      { name: "Docker", level: 75, icon: "🐳" },
-      { name: "AWS", level: 70, icon: "☁️" },
-      { name: "Figma", level: 80, icon: "🎨" },
-      { name: "VS Code", level: 95, icon: "💻" },
-      { name: "Postman", level: 85, icon: "📮" },
+    languages: [
+      { name: "Java", icon: "☕" },
+    ],
+    frameworks: [
+      { name: "Bootstrap", icon: "🅱️" },
+      { name: "Tailwind CSS", icon: "💨" },
+      { name: "Material UI", icon: "🔵" },
+      { name: "Git", icon: "�" },
+      { name: "GitHub", icon: "�" },
     ],
   },
 
   // Projects
-  projects: [
-    {
-      id: 1,
-      title: "E-Commerce Platform",
-      description: "A full-featured e-commerce platform built with Next.js, Stripe, and PostgreSQL. Features include user authentication, product catalog, shopping cart, and admin dashboard.",
-      image: "/images/project1.jpg",
-      technologies: ["Next.js", "TypeScript", "PostgreSQL", "Stripe", "Tailwind CSS"],
-      liveUrl: "https://ecommerce-demo.com",
-      githubUrl: "https://github.com/yourusername/ecommerce-platform",
-      featured: true,
-      category: "Full Stack",
-    },
-    {
-      id: 2,
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      image: "/images/project2.jpg",
-      technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Material-UI"],
-      liveUrl: "https://taskmanager-demo.com",
-      githubUrl: "https://github.com/yourusername/task-manager",
-      featured: true,
-      category: "Full Stack",
-    },
-    {
-      id: 3,
-      title: "Weather Dashboard",
-      description: "A responsive weather dashboard that displays current conditions and forecasts using external APIs with beautiful data visualizations.",
-      image: "/images/project3.jpg",
-      technologies: ["React", "Chart.js", "OpenWeather API", "CSS Modules"],
-      liveUrl: "https://weather-dashboard-demo.com",
-      githubUrl: "https://github.com/yourusername/weather-dashboard",
-      featured: false,
-      category: "Frontend",
-    },
-    {
-      id: 4,
-      title: "Blog Platform",
-      description: "A modern blog platform with markdown support, comment system, and SEO optimization built with Next.js and headless CMS.",
-      image: "/images/project4.jpg",
-      technologies: ["Next.js", "MDX", "Contentful", "Vercel"],
-      liveUrl: "https://blog-platform-demo.com",
-      githubUrl: "https://github.com/yourusername/blog-platform",
-      featured: false,
-      category: "Full Stack",
-    },
+  projects: [{
+  id: 1,
+  title: "SoundSwap",
+  description: "A playlist converter that allows users to transform their Spotify playlists into YouTube Music playlists seamlessly. Handles authentication, API integration, and smooth track mapping between platforms.",
+  image: "/assets/images/soundswap.png",
+  technologies: ["React.js", "Node.js","MongoDb","Express","OAuth", "Spotify API", "Google  API","Tailwind CSS"],
+  liveUrl: "https://sound-swap-frontend.vercel.app",
+  githubUrl: "https://github.com/Lovish141/SoundSwap",
+  featured: true,
+  category: "Full Stack",
+},
+{
+  id: 2,
+  title: "ZippyUrl",
+  description: "A lightweight and efficient URL shortener application.",
+  image: "/assets/images/zippyurl.png",
+  technologies: ["Next.js","Prisma","PostgreSQL","ShadCN UI","Tailwind CSS"],
+  liveUrl: "https://zippyurl.vercel.app/",
+  githubUrl: "https://github.com/Lovish141/tinyurl",
+  featured: true,
+  category: "Full Stack",
+},
+{
+  id: 3,
+  title: "Daunku",
+  description: "A modern and visually appealing furniture website designed to showcase collections and engage customers. Built using a responsive frontend stack without backend integration.",
+  image: "/assets/images/daunku.png",
+  technologies: ["React.js", "Tailwind CSS", "Framer Motion"],
+  liveUrl: "https://daunku.com",
+  githubUrl: "https://github.com/yourusername/daunku",
+  featured: false,
+  category: "Frontend",
+}
+
   ],
 // Education
 education: [

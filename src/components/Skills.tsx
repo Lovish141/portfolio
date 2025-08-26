@@ -82,9 +82,7 @@ const Skills = () => {
                       y: -2
                     }}
                   >
-                    <span className="text-2xl group-hover:scale-110 transition-transform duration-200">{skill.icon}</span>
-                    <span className="text-white font-medium">{skill.name}</span>
-                    <motion.div 
+                     <motion.div 
                       className="w-2 h-2 bg-gradient-to-r from-blue-500 to-cyan-300 rounded-full"
                       animate={{ 
                         scale: [1, 1.2, 1],
@@ -96,50 +94,15 @@ const Skills = () => {
                         delay: index * 0.1
                       }}
                     ></motion.div>
+                    <span className="text-white font-medium">{skill.name}</span>
+                   
                   </motion.div>
                 ))}
               </div>
             </div>
           </motion.div>
 
-          {/* Skills Summary Cards */}
-          <motion.div 
-            variants={itemVariants}
-            className="mt-16 grid md:grid-cols-3 gap-6 max-w-4xl mx-auto"
-          >
-            {[
-              { key: 'frontend', label: 'Frontend', icon: '🎨' },
-              { key: 'backend', label: 'Backend', icon: '⚙️' },
-              { key: 'tools', label: 'Tools & Other', icon: '🛠️' },
-            ].map((category, index) => {
-              const skills = portfolioData.skills[category.key as keyof typeof portfolioData.skills];
-              
-              return (
-                <motion.div
-                  key={category.key}
-                  className="bg-gray-900/30 backdrop-blur-sm rounded-xl p-6 border border-gray-600/20 text-center"
-                  initial={{ scale: 0, rotate: -10 }}
-                  animate={isInView ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -10 }}
-                  transition={{ 
-                    duration: 0.6, 
-                    delay: index * 0.2,
-                    type: "spring",
-                    stiffness: 100
-                  }}
-                  whileHover={{ 
-                    scale: 1.05,
-                    boxShadow: "0 20px 25px -5px rgba(59, 130, 246, 0.1)"
-                  }}
-                >
-                  <div className="text-4xl mb-4">{category.icon}</div>
-                  <h3 className="text-xl font-semibold text-white mb-2">{category.label}</h3>
-                  <div className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-300">
-                    {skills.length}+ Technologies
-                  </div>
-                </motion.div>
-              );
-            })}
-          </motion.div>
+
         </motion.div>
       </div>
     </section>
