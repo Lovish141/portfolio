@@ -87,7 +87,7 @@ const ProjectRow = ({ project, index }: { project: Project; index: number }) => 
                 alt={project.title}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                className="object-contain object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                 priority={index === 0}
               />
             ) : (
