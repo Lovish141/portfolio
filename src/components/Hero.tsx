@@ -131,10 +131,10 @@ const Hero = () => {
                 Currently
               </div>
               <div className="mt-1.5 font-display text-xl leading-tight text-text">
-                Software Engineer&nbsp;I
+                {portfolioData.credentials.currentRole}
               </div>
               <div className="mt-0.5 font-mono text-[11px] uppercase tracking-[0.18em] text-text-muted">
-                Microchip Technology
+                {portfolioData.credentials.currentCompany}
               </div>
             </div>
 
@@ -145,10 +145,10 @@ const Hero = () => {
               </div>
               <div className="mt-2 flex items-baseline gap-3">
                 <span className="font-display text-5xl font-light leading-none tracking-[-0.03em] text-accent">
-                  +22%
+                  {portfolioData.credentials.impactMetric}
                 </span>
-                <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-text-muted">
-                  search<br />relevancy
+                <span className="whitespace-pre-line font-mono text-[11px] uppercase tracking-[0.18em] text-text-muted">
+                  {portfolioData.credentials.impactLabel}
                 </span>
               </div>
             </div>
@@ -159,10 +159,14 @@ const Hero = () => {
                 Based in
               </div>
               <div className="mt-1.5 flex items-baseline justify-between gap-3">
-                <span className="font-display text-xl text-text">Bangalore</span>
-                <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-text-dim">
-                  IN · UTC+5:30
+                <span className="font-display text-xl text-text">
+                  {portfolioData.credentials.locationCity}
                 </span>
+                {portfolioData.credentials.locationLocale && (
+                  <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-text-dim">
+                    {portfolioData.credentials.locationLocale}
+                  </span>
+                )}
               </div>
             </div>
 
@@ -177,12 +181,14 @@ const Hero = () => {
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-success" />
                 </span>
                 <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-success">
-                  Available
+                  {portfolioData.credentials.statusLabel}
                 </span>
               </div>
-              <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.18em] text-text-muted">
-                For select projects
-              </div>
+              {portfolioData.credentials.statusDetail && (
+                <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.18em] text-text-muted">
+                  {portfolioData.credentials.statusDetail}
+                </div>
+              )}
             </div>
           </div>
         </motion.aside>

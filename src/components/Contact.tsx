@@ -25,7 +25,7 @@ const Contact = () => {
     { key: 'github', label: 'GitHub', url: social.github.url },
     { key: 'linkedin', label: 'LinkedIn', url: social.linkedin.url },
     { key: 'twitter', label: 'Twitter / X', url: social.twitter.url },
-  ];
+  ].filter((s) => s.url);
 
   return (
     <section
@@ -145,39 +145,41 @@ const Contact = () => {
             </FadeIn>
 
             {/* Elsewhere */}
-            <FadeIn delay={0.4}>
-              <div className="mt-16">
-                <div className="mb-5 flex items-center justify-between border-b border-border pb-3">
-                  <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-text-dim">
-                    Elsewhere
-                  </span>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-text-dim">
-                    Async only
-                  </span>
+            {socialLinks.length > 0 && (
+              <FadeIn delay={0.4}>
+                <div className="mt-16">
+                  <div className="mb-5 flex items-center justify-between border-b border-border pb-3">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-text-dim">
+                      Elsewhere
+                    </span>
+                    <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-text-dim">
+                      Async only
+                    </span>
+                  </div>
+                  <ul className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-3">
+                    {socialLinks.map((s) => (
+                      <li key={s.key}>
+                        <a
+                          href={s.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group flex items-center justify-between gap-4 bg-bg p-5 text-text-muted transition-colors hover:bg-bg-elev hover:text-accent"
+                          data-cursor-hover
+                        >
+                          <span className="font-display text-xl text-text group-hover:text-accent transition-colors md:text-2xl">
+                            {s.label}
+                          </span>
+                          <ArrowUpRight
+                            className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                            aria-hidden
+                          />
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-3">
-                  {socialLinks.map((s) => (
-                    <li key={s.key}>
-                      <a
-                        href={s.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group flex items-center justify-between gap-4 bg-bg p-5 text-text-muted transition-colors hover:bg-bg-elev hover:text-accent"
-                        data-cursor-hover
-                      >
-                        <span className="font-display text-xl text-text group-hover:text-accent transition-colors md:text-2xl">
-                          {s.label}
-                        </span>
-                        <ArrowUpRight
-                          className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                          aria-hidden
-                        />
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </FadeIn>
+              </FadeIn>
+            )}
           </div>
         </div>
       </div>

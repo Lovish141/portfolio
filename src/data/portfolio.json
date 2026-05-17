@@ -109,7 +109,7 @@
       "id": 2,
       "title": "Invixy",
       "description": "A multi-tenant SaaS invoice management platform engineered with Next.js, Prisma ORM, and PostgreSQL. Features a dynamic tax-calculation engine supporting India (GST), Canada (HST/GST), and US tax regimes — eliminating manual tax computation for businesses. Authentication and authorization handled via NextAuth.js with role-based access control (RBAC) across three user personas: owner, accountant, and employee, each with scoped dashboards and permissions.",
-      "image": "/assets/images/invixy-1779039708640.png",
+      "image": "",
       "technologies": [
         "Next.js",
         "Prisma",
@@ -128,7 +128,7 @@
       "id": 1,
       "title": "SoundSwap",
       "description": "A full-stack playlist migration platform that converts Spotify libraries to YouTube Music. Built with React.js on the frontend and an Express.js + Node.js backend connected to MongoDB. Implements Spotify and Google OAuth 2.0 for secure cross-platform authentication. The REST API handles track mapping and metadata retrieval at sub-300ms average response time, supporting real-time sync of playlists with 500+ tracks. Responsive Tailwind CSS UI with full mobile support.",
-      "image": "/assets/images/soundswap.png",
+      "image": "",
       "technologies": [
         "React.js",
         "Node.js",
@@ -150,7 +150,7 @@
       "id": 3,
       "title": "Daunku",
       "description": "A performant frontend showcase for a furniture brand, built in React.js with Framer Motion for fluid animation choreography. Features a responsive product gallery, motion-driven page transitions, and layout compositions designed for conversion. Zero backend — pure frontend engineering with a focus on render performance and visual polish.",
-      "image": "/assets/images/daunku.png",
+      "image": "",
       "technologies": [
         "React.js",
         "Tailwind CSS",
@@ -229,6 +229,16 @@
     "subtitle": "Working on something that needs a careful pair of hands? Tell me about it.",
     "availability": "Available for select projects",
     "calLink": "https://cal.com/lovish-sharma/30min?user=lovish-sharma"
+  },
+  "credentials": {
+    "currentRole": "Software Engineer I",
+    "currentCompany": "Microchip Technology",
+    "impactMetric": "+22%",
+    "impactLabel": "search\nrelevancy",
+    "locationCity": "Bangalore",
+    "locationLocale": "IN · UTC+5:30",
+    "statusLabel": "Available",
+    "statusDetail": "For select projects"
   },
   "social": {
     "github": {

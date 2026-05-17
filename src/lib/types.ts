@@ -80,6 +80,17 @@ export type Contact = {
   calLink: string;
 };
 
+export type Credentials = {
+  currentRole: string;
+  currentCompany: string;
+  impactMetric: string;
+  impactLabel: string;
+  locationCity: string;
+  locationLocale: string;
+  statusLabel: string;
+  statusDetail: string;
+};
+
 export type PortfolioData = {
   personal: Personal;
   skills: Skills;
@@ -88,6 +99,7 @@ export type PortfolioData = {
   experience: Experience[];
   now: Now;
   contact: Contact;
+  credentials: Credentials;
   social: {
     github: SocialLink;
     linkedin: SocialLink;

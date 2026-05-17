@@ -14,6 +14,7 @@ const NAV = [
   { href: '/admin/education', label: 'Education', section: 'education' as Section },
   { href: '/admin/now', label: 'Now', section: 'now' as Section },
   { href: '/admin/contact', label: 'Contact', section: 'contact' as Section },
+  { href: '/admin/credentials', label: 'Credentials', section: 'credentials' as Section },
   { href: '/admin/social', label: 'Social', section: 'social' as Section },
 ];
 

@@ -82,6 +82,17 @@ export const ContactSchema = z.object({
   calLink: z.string().max(400),
 });
 
+export const CredentialsSchema = z.object({
+  currentRole: z.string().min(1).max(120),
+  currentCompany: z.string().min(1).max(120),
+  impactMetric: z.string().min(1).max(40),
+  impactLabel: z.string().min(1).max(120),
+  locationCity: z.string().min(1).max(80),
+  locationLocale: z.string().max(80),
+  statusLabel: z.string().min(1).max(40),
+  statusDetail: z.string().max(120),
+});
+
 export const SocialSchema = z.object({
   github: SocialLinkSchema,
   linkedin: SocialLinkSchema,
@@ -98,6 +109,7 @@ export const PortfolioSchema = z.object({
   experience: z.array(ExperienceSchema).max(30),
   now: NowSchema,
   contact: ContactSchema,
+  credentials: CredentialsSchema,
   social: SocialSchema,
 });
 
@@ -109,6 +121,7 @@ export const SECTIONS = [
   'experience',
   'now',
   'contact',
+  'credentials',
   'social',
 ] as const;
 
@@ -122,5 +135,6 @@ export const sectionSchemas: Record<Section, z.ZodTypeAny> = {
   experience: z.array(ExperienceSchema).max(30),
   now: NowSchema,
   contact: ContactSchema,
+  credentials: CredentialsSchema,
   social: SocialSchema,
 };
