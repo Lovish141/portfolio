@@ -24,12 +24,12 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://lovish.dev'),
   title: {
-    default: 'Lovish Sharma — Full-stack engineer',
+    default: 'Lovish Sharma — Software engineer',
     template: '%s — Lovish Sharma',
   },
   description:
-    'Full-stack engineer based in Bangalore, building search and discovery at Microchip. Selected work, experience, and contact.',
-  keywords: ['Lovish Sharma', 'full-stack engineer', 'Next.js', 'React', 'TypeScript', 'Microchip', 'Bangalore', 'portfolio'],
+    'Software engineer based in Bangalore, building search and discovery at Microchip. Selected work, experience, and contact.',
+  keywords: ['Lovish Sharma', 'software engineer', 'full-stack engineer', 'Next.js', 'React', 'TypeScript', 'Microchip', 'Bangalore', 'portfolio'],
   authors: [{ name: 'Lovish Sharma', url: 'https://lovish.dev' }],
   creator: 'Lovish Sharma',
   openGraph: {
@@ -37,18 +37,18 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     url: 'https://lovish.dev',
     siteName: 'Lovish Sharma',
-    title: 'Lovish Sharma — Full-stack engineer',
+    title: 'Lovish Sharma — Software engineer',
     description:
-      'Full-stack engineer based in Bangalore. Selected work, experience, and contact.',
+      'Software engineer based in Bangalore. Selected work, experience, and contact.',
     images: [
-      { url: '/og.png', width: 1200, height: 630, alt: 'Lovish Sharma — Full-stack engineer' },
+      { url: '/og.png', width: 1200, height: 630, alt: 'Lovish Sharma — Software engineer' },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     creator: '@LovishS08693875',
-    title: 'Lovish Sharma — Full-stack engineer',
-    description: 'Full-stack engineer based in Bangalore.',
+    title: 'Lovish Sharma — Software engineer',
+    description: 'Software engineer based in Bangalore.',
     images: ['/og.png'],
   },
   robots: { index: true, follow: true },

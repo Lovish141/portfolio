@@ -52,7 +52,7 @@ const About = () => {
             <FadeIn delay={0.4}>
               <div className="pt-4">
                 <MagneticButton
-                  href="/LovishSharma_FullStackEngineer_resume.pdf"
+                  href="/LovishSharma_SoftwareEngineer_resume.pdf"
                   download
                   className="gap-3 border border-border-strong px-6 py-3 font-mono text-xs uppercase tracking-[0.2em] text-text hover:border-accent hover:text-accent transition-colors"
                 >

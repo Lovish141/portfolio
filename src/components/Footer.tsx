@@ -50,7 +50,7 @@ const Footer = () => {
               Available<span className="text-accent">.</span>
             </h2>
             <p className="mt-4 max-w-xl text-base leading-[1.5] text-text-muted md:text-lg">
-              Open for full-stack roles, contracts, and select side projects.{' '}
+              Open for software engineering roles, contracts, and select side projects.{' '}
               <a
                 href={`mailto:${personal.email}`}
                 className="text-text underline-offset-4 hover:underline hover:text-accent transition-colors"
