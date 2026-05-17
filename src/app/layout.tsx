@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Fraunces, Inter, JetBrains_Mono } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 
 const fraunces = Fraunces({
@@ -72,6 +73,7 @@ export default function RootLayout({
       <body className="antialiased">
         <a href="#main" className="skip-link">Skip to content</a>
         {children}
+        <Analytics />
       </body>
     </html>
   );
