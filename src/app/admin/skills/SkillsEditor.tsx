@@ -95,7 +95,7 @@ function SkillGroup({
               value={s.name}
               onChange={(e) => update(i, { name: e.target.value })}
               placeholder="Name"
-              className="flex-1 border border-border bg-bg px-2 py-1.5 font-mono text-sm text-text outline-none focus:border-accent"
+              className="min-w-0 flex-1 border border-border bg-bg px-2 py-1.5 font-mono text-sm text-text outline-none focus:border-accent"
             />
             <label
               className={`inline-flex shrink-0 cursor-pointer items-center gap-1.5 border px-2 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] transition-colors ${
