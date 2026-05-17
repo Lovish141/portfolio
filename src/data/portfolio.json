@@ -10,47 +10,135 @@
     "linkedIn": "https://www.linkedin.com/in/lovish1sharma/",
     "github": "https://github.com/Lovish141",
     "bio": [
-      "I'm Lovish — a software engineer based in Bangalore. At Microchip, I work on the search and discovery surfaces of microchip.com, where I lifted relevancy by 22% and built admin tooling in Vue.js + .NET that keeps the product catalog moving.",
-      "I care about systems that hold up under load, interfaces that don't waste a click, and writing the kind of code the next person on the team is happy to inherit. Outside work I tinker with side projects — recently a Spotify-to-YouTube playlist converter and a multi-country SaaS invoice platform."
+      "I'm Lovish — a Software Engineer based in Bangalore with 1.5+ years of professional experience building and shipping production-grade web applications. At Microchip Technology, I engineer the search and discovery infrastructure for microchip.com: I improved site-search relevancy by 22%, reduced null-result queries near to zero, and delivered internal admin tooling in Vue.js and .NET that product teams across the globe use daily.",
+      "My work spans frontend development (Vue.js, React.js, Next.js), backend API design (.NET Framework, Node.js, Express.js), and database engineering (SQL Server, PostgreSQL, MongoDB). I write code that is readable, testable, and built to scale — the kind of codebase the next engineer on the team is glad to inherit. Outside of work I ship personal projects: a Spotify-to-YouTube playlist converter using OAuth 2.0 and REST APIs, and a multi-tenant SaaS invoice platform with role-based access control and multi-country tax logic."
     ]
   },
   "skills": {
     "frontend": [
-      { "name": "Vue.js", "atWork": true },
-      { "name": "JavaScript", "atWork": true },
-      { "name": "HTML", "atWork": true },
-      { "name": "CSS", "atWork": true },
-      { "name": "Next.js", "atWork": false },
-      { "name": "React.js", "atWork": false },
-      { "name": "TypeScript", "atWork": false },
-      { "name": "Bootstrap", "atWork": false },
-      { "name": "Material UI", "atWork": false }
+      {
+        "name": "Vue.js",
+        "atWork": true
+      },
+      {
+        "name": "JavaScript",
+        "atWork": true
+      },
+      {
+        "name": "HTML",
+        "atWork": true
+      },
+      {
+        "name": "CSS",
+        "atWork": true
+      },
+      {
+        "name": "Next.js",
+        "atWork": true
+      },
+      {
+        "name": "React.js",
+        "atWork": false
+      },
+      {
+        "name": "TypeScript",
+        "atWork": false
+      },
+      {
+        "name": "Bootstrap",
+        "atWork": false
+      },
+      {
+        "name": "Material UI",
+        "atWork": false
+      }
     ],
     "backend": [
-      { "name": ".NET Framework", "atWork": true },
-      { "name": "Node.js", "atWork": false },
-      { "name": "Express.js", "atWork": false },
-      { "name": "Java", "atWork": false }
+      {
+        "name": ".NET Framework",
+        "atWork": true
+      },
+      {
+        "name": "Node.js",
+        "atWork": true
+      },
+      {
+        "name": "Express.js",
+        "atWork": false
+      },
+      {
+        "name": "Java",
+        "atWork": false
+      }
     ],
     "databases": [
-      { "name": "SQL Server", "atWork": true },
-      { "name": "MongoDB", "atWork": true },
-      { "name": "PostgreSQL", "atWork": false }
+      {
+        "name": "SQL Server",
+        "atWork": true
+      },
+      {
+        "name": "MongoDB",
+        "atWork": true
+      },
+      {
+        "name": "PostgreSQL",
+        "atWork": true
+      }
     ],
     "tooling": [
-      { "name": "Git", "atWork": true },
-      { "name": "GitHub", "atWork": true },
-      { "name": "PowerShell", "atWork": true },
-      { "name": "Lucidworks Fusion", "atWork": true }
+      {
+        "name": "Git",
+        "atWork": true
+      },
+      {
+        "name": "GitHub",
+        "atWork": true
+      },
+      {
+        "name": "PowerShell",
+        "atWork": false
+      },
+      {
+        "name": "Lucidworks Fusion",
+        "atWork": false
+      }
     ]
   },
   "projects": [
     {
+      "id": 2,
+      "title": "Invixy",
+      "description": "A multi-tenant SaaS invoice management platform engineered with Next.js, Prisma ORM, and PostgreSQL. Features a dynamic tax-calculation engine supporting India (GST), Canada (HST/GST), and US tax regimes — eliminating manual tax computation for businesses. Authentication and authorization handled via NextAuth.js with role-based access control (RBAC) across three user personas: owner, accountant, and employee, each with scoped dashboards and permissions.",
+      "image": "/assets/images/invixy-1779039708640.png",
+      "technologies": [
+        "Next.js",
+        "Prisma",
+        "PostgreSQL",
+        "NextAuth.js",
+        "Tailwind CSS"
+      ],
+      "liveUrl": "https://www.invixy.com/",
+      "githubUrl": "",
+      "featured": true,
+      "category": "Full Stack",
+      "role": "Full stack",
+      "year": 2024
+    },
+    {
       "id": 1,
       "title": "SoundSwap",
-      "description": "Full-stack converter that turns Spotify playlists into YouTube Music with OAuth-backed cross-platform login, Express + MongoDB APIs for storage and track mapping, and a Tailwind UI for a clean responsive flow.",
+      "description": "A full-stack playlist migration platform that converts Spotify libraries to YouTube Music. Built with React.js on the frontend and an Express.js + Node.js backend connected to MongoDB. Implements Spotify and Google OAuth 2.0 for secure cross-platform authentication. The REST API handles track mapping and metadata retrieval at sub-300ms average response time, supporting real-time sync of playlists with 500+ tracks. Responsive Tailwind CSS UI with full mobile support.",
       "image": "/assets/images/soundswap.png",
-      "technologies": ["React.js", "Node.js", "Express", "MongoDB", "OAuth", "Spotify API", "Google API", "Tailwind CSS"],
+      "technologies": [
+        "React.js",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "OAuth",
+        "Spotify API",
+        "Google API",
+        "Tailwind CSS"
+      ],
       "liveUrl": "https://sound-swap-frontend.vercel.app",
       "githubUrl": "https://github.com/Lovish141/SoundSwap",
       "featured": true,
@@ -59,26 +147,17 @@
       "year": 2024
     },
     {
-      "id": 2,
-      "title": "Invixy",
-      "description": "SaaS invoice management platform with multi-country tax logic (India, Canada, US). NextAuth role-based access lets owners, accountants, and employees manage invoices, clients, and products from dedicated dashboards.",
-      "image": "",
-      "technologies": ["Next.js", "Prisma", "PostgreSQL", "NextAuth.js", "Tailwind CSS"],
-      "liveUrl": "https://invixy.app",
-      "githubUrl": "https://github.com/Lovish141/invixy",
-      "featured": true,
-      "category": "Full Stack",
-      "role": "Full stack",
-      "year": 2025
-    },
-    {
       "id": 3,
       "title": "Daunku",
-      "description": "Frontend showcase for a furniture brand — responsive layouts, motion choreography, and a product gallery built without a backend.",
+      "description": "A performant frontend showcase for a furniture brand, built in React.js with Framer Motion for fluid animation choreography. Features a responsive product gallery, motion-driven page transitions, and layout compositions designed for conversion. Zero backend — pure frontend engineering with a focus on render performance and visual polish.",
       "image": "/assets/images/daunku.png",
-      "technologies": ["React.js", "Tailwind CSS", "Framer Motion"],
-      "liveUrl": "https://daunku.com",
-      "githubUrl": "https://github.com/Lovish141/daunku",
+      "technologies": [
+        "React.js",
+        "Tailwind CSS",
+        "Framer Motion"
+      ],
+      "liveUrl": "https://daunku-three.vercel.app/",
+      "githubUrl": "https://github.com/Lovish141/InteriorPlantWebsite",
       "featured": false,
       "category": "Frontend",
       "role": "Frontend",
@@ -110,7 +189,14 @@
         "Built and maintained admin applications in Vue.js, .NET, MongoDB, and SQL Server that streamline product-data management across categories.",
         "Ideated and shipped TreeLink — a Vue.js + .NET app for creating and visualizing hierarchical product-category trees, improving catalog organization and discoverability."
       ],
-      "technologies": ["Vue.js", ".NET", "SQL Server", "MongoDB", "Lucidworks Fusion", "JavaScript"]
+      "technologies": [
+        "Vue.js",
+        ".NET",
+        "SQL Server",
+        "MongoDB",
+        "Lucidworks Fusion",
+        "JavaScript"
+      ]
     },
     {
       "id": 2,
@@ -124,7 +210,12 @@
         "Built a search-analytics dashboard surfacing query trends and zero-result rates as actionable insights.",
         "Closed bugs across frontend and backend modules, tightening stability, usability, and load times."
       ],
-      "technologies": [".NET", "JavaScript", "PowerShell", "SQL Server"]
+      "technologies": [
+        ".NET",
+        "JavaScript",
+        "PowerShell",
+        "SQL Server"
+      ]
     }
   ],
   "now": {
@@ -140,10 +231,30 @@
     "calLink": "https://cal.com/lovish-sharma/30min?user=lovish-sharma"
   },
   "social": {
-    "github": { "url": "https://github.com/Lovish141", "icon": "github", "label": "GitHub" },
-    "linkedin": { "url": "https://www.linkedin.com/in/lovish1sharma/", "icon": "linkedin", "label": "LinkedIn" },
-    "twitter": { "url": "https://x.com/LovishS08693875", "icon": "twitter", "label": "Twitter" },
-    "email": { "url": "mailto:slovish11sharma@gmail.com", "icon": "email", "label": "Email" },
-    "phone": { "url": "tel:+919779898119", "icon": "phone", "label": "Phone" }
+    "github": {
+      "url": "https://github.com/Lovish141",
+      "icon": "github",
+      "label": "GitHub"
+    },
+    "linkedin": {
+      "url": "https://www.linkedin.com/in/lovish1sharma/",
+      "icon": "linkedin",
+      "label": "LinkedIn"
+    },
+    "twitter": {
+      "url": "https://x.com/LovishS08693875",
+      "icon": "twitter",
+      "label": "Twitter"
+    },
+    "email": {
+      "url": "mailto:slovish11sharma@gmail.com",
+      "icon": "email",
+      "label": "Email"
+    },
+    "phone": {
+      "url": "tel:+919779898119",
+      "icon": "phone",
+      "label": "Phone"
+    }
   }
 }
