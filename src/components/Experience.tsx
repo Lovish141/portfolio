@@ -1,272 +1,109 @@
 'use client';
 
-import { motion, useInView, easeOut } from 'framer-motion';
-import { useRef } from 'react';
-import { BriefcaseIcon, CalendarIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import { portfolioData } from '@/data/portfolioData';
+import RevealText from '@/components/motion/RevealText';
+import FadeIn from '@/components/motion/FadeIn';
+
+const formatDate = (raw: string) => {
+  if (raw === 'Present') return 'Present';
+  const [year, month] = raw.split('-');
+  if (!month) return year;
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  return `${months[Number(month) - 1]} ${year}`;
+};
 
 const Experience = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-  transition: { duration: 0.8, ease: easeOut },
-    },
-  };
-
-  const timelineVariants = {
-    hidden: { height: 0 },
-    visible: {
-      height: '100%',
-      transition: { duration: 2, ease: easeOut },
-    },
-  };
-
-  type ExperienceType = {
-    position: string;
-    company: string;
-    startDate: string;
-    endDate: string;
-    location: string;
-    description: string[];
-    technologies: string[];
-  };
-  const ExperienceCard = ({ experience, index, isLast }: { experience: ExperienceType; index: number; isLast: boolean }) => {
-    return (
-      <motion.div
-        className="relative flex items-start space-x-6 pb-12"
-        variants={itemVariants}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-        transition={{ delay: index * 0.2 }}
-      >
-        {/* Timeline */}
-        <div className="flex flex-col items-center">
-          <motion.div
-            className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-lg"
-            initial={{ scale: 0 }}
-            animate={isInView ? { scale: 1 } : { scale: 0 }}
-            transition={{ delay: index * 0.2 + 0.5, type: "spring", stiffness: 200 }}
-          >
-            <BriefcaseIcon className="w-6 h-6 text-white" />
-          </motion.div>
-          {!isLast && (
-            <div className="w-0.5 h-full bg-gray-600/30 mt-4 overflow-hidden">
-              <motion.div
-                className="w-full bg-gradient-to-b from-blue-500 to-cyan-500"
-                variants={timelineVariants}
-                initial="hidden"
-                animate={isInView ? "visible" : "hidden"}
-                transition={{ delay: index * 0.2 + 0.8 }}
-              />
-            </div>
-          )}
-        </div>
-
-        {/* Content */}
-        <motion.div
-          className="flex-1 bg-gray-900/30 backdrop-blur-sm rounded-xl p-6 border border-gray-600/20"
-          whileHover={{ 
-            scale: 1.02,
-            boxShadow: "0 20px 25px -5px rgba(147, 51, 234, 0.15)"
-          }}
-          transition={{ duration: 0.3 }}
-        >
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-            <div>
-              <h3 className="text-xl font-semibold text-white mb-1">
-                {experience.position}
-              </h3>
-              <h4 className="text-cyan-400 font-medium">
-                {experience.company}
-              </h4>
-            </div>
-            <div className="flex flex-col md:items-end text-white/60 text-sm mt-2 md:mt-0">
-              <div className="flex items-center space-x-1">
-                <CalendarIcon className="w-4 h-4" />
-                <span>{experience.startDate} - {experience.endDate}</span>
-              </div>
-              <div className="flex items-center space-x-1 mt-1">
-                <MapPinIcon className="w-4 h-4" />
-                <span>{experience.location}</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="mb-4">
-            <ul className="space-y-2">
-              {experience.description.map((item: string, i: number) => (
-                <motion.li
-                  key={i}
-                  className="text-white/80 text-sm flex items-start space-x-2"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                  transition={{ delay: index * 0.2 + 0.8 + i * 0.1 }}
-                >
-                  <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 flex-shrink-0"></div>
-                  <span>{item}</span>
-                </motion.li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="flex flex-wrap gap-2">
-            {experience.technologies.map((tech: string, i: number) => (
-              <motion.span
-                key={tech}
-                className="text-xs bg-gray-800/50 text-white/80 px-3 py-1 rounded-full border border-gray-600/30"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
-                transition={{ delay: index * 0.2 + 1 + i * 0.05 }}
-                whileHover={{ 
-                  scale: 1.1,
-                  backgroundColor: "rgba(147, 51, 234, 0.2)"
-                }}
-              >
-                {tech}
-              </motion.span>
-            ))}
-          </div>
-        </motion.div>
-      </motion.div>
-    );
-  };
+  const { experience } = portfolioData;
 
   return (
-    <section id="experience" className="py-20 bg-gradient-to-b from-gray-900/50 to-black/70" ref={ref}>
-      <div className="container mx-auto px-6">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
-          {/* Section Header */}
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <motion.h2 
-              className="text-4xl md:text-5xl font-bold text-white mb-4"
-              initial={{ scale: 0.5 }}
-              animate={isInView ? { scale: 1 } : { scale: 0.5 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-            >
-              My <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-300">Experience</span>
-            </motion.h2>
-            <motion.div
-              className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-300 mx-auto rounded-full"
-              initial={{ width: 0 }}
-              animate={isInView ? { width: 96 } : { width: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            />
-            <motion.p
-              className="text-white/70 mt-4 max-w-2xl mx-auto"
-              variants={itemVariants}
-            >
-              My professional journey and the experiences that have shaped my skills and expertise.
-            </motion.p>
-          </motion.div>
-
-          {/* Experience Timeline */}
-          <div className="max-w-4xl mx-auto">
-            {portfolioData.experience.map((experience, index) => (
-              <ExperienceCard
-                key={experience.id}
-                experience={experience}
-                index={index}
-                isLast={index === portfolioData.experience.length - 1}
-              />
-            ))}
+    <section
+      id="experience"
+      className="border-t border-border px-6 py-20 md:px-10 md:py-28"
+      aria-labelledby="experience-heading"
+    >
+      <div className="mx-auto max-w-[1400px]">
+        <div className="grid grid-cols-1 gap-y-12 md:grid-cols-12 md:gap-x-12">
+          <div className="md:col-span-2">
+            <div className="sticky top-28 font-mono text-xs uppercase tracking-[0.2em] text-text-dim">
+              <div>(04)</div>
+              <div className="mt-1">Experience</div>
+            </div>
           </div>
 
-          {/* Summary Stats */}
-          {/* <motion.div 
-            variants={itemVariants}
-            className="mt-16 grid md:grid-cols-3 gap-6 max-w-4xl mx-auto"
-          >
-            {[
-              { label: "Years of Experience", value: "5+", icon: "📅" },
-              { label: "Companies Worked With", value: portfolioData.experience.length, icon: "🏢" },
-              { label: "Technologies Mastered", value: "20+", icon: "💻" },
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                className="bg-gray-900/30 backdrop-blur-sm rounded-xl p-6 border border-gray-600/20 text-center"
-                initial={{ scale: 0, rotate: -10 }}
-                animate={isInView ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -10 }}
-                transition={{ 
-                  duration: 0.6, 
-                  delay: index * 0.2,
-                  type: "spring",
-                  stiffness: 100
-                }}
-                whileHover={{ 
-                  scale: 1.05,
-                  boxShadow: "0 20px 25px -5px rgba(147, 51, 234, 0.1)"
-                }}
-              >
-                <div className="text-4xl mb-4">{stat.icon}</div>
-                <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-300 mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-white/70 font-medium">{stat.label}</div>
-              </motion.div>
-            ))}
-          </motion.div> */}
-
-          {/* Career Highlight */}
-          <motion.div 
-            variants={itemVariants}
-            className="mt-16 max-w-4xl mx-auto"
-          >
-            <motion.div
-              className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 backdrop-blur-sm rounded-xl p-8 border border-gray-600/20"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
+          <div className="md:col-span-10">
+            <h2
+              id="experience-heading"
+              className="font-display font-light leading-[0.95] tracking-[-0.03em] text-text text-[clamp(2.5rem,6vw,5rem)]"
             >
-              <div className="text-center">
-                <div className="text-4xl mb-4">🚀</div>
-                <h3 className="text-2xl font-semibold text-white mb-4">
-                  Career Highlight
+              <RevealText splitBy="words" stagger={0.05}>
+                Where I&apos;ve shipped.
+              </RevealText>
+            </h2>
+          </div>
+        </div>
+
+        {/* Sticky-rail layout: company on the left, roles stack on the right */}
+        <div className="mt-16 grid grid-cols-1 gap-y-12 md:grid-cols-12 md:gap-x-12">
+          <div className="md:col-span-4">
+            <div className="md:sticky md:top-32">
+              <FadeIn>
+                <div className="font-mono text-xs uppercase tracking-[0.2em] text-text-dim">Company</div>
+                <h3 className="mt-3 font-display text-3xl leading-[1.05] text-text md:text-4xl">
+                  Microchip Technology
                 </h3>
-                <p className="text-white/80 max-w-2xl mx-auto leading-relaxed">
-                Enhanced enterprise search functionality improving relevancy by 12%, built scalable tools supporting 5,000+ product categories, and automated workflows reducing manual effort by 40%.
+                <div className="mt-2 font-mono text-xs uppercase tracking-[0.18em] text-text-muted">
+                  Bangalore, India · 2024 — Present
+                </div>
+                <p className="mt-6 max-w-xs text-sm leading-[1.6] text-text-muted">
+                  Search and discovery for microchip.com — making a deep
+                  product catalog easier to navigate for customers and editors.
                 </p>
-              </div>
-            </motion.div>
-          </motion.div>
+              </FadeIn>
+            </div>
+          </div>
 
-          {/* Call to Action */}
-          <motion.div 
-            variants={itemVariants}
-            className="text-center mt-12"
-          >
-            <motion.div
-              className="inline-flex items-center space-x-2 text-white/60 hover:text-cyan-400 transition-colors cursor-pointer"
-              whileHover={{ scale: 1.05 }}
-              onClick={() => {
-                // You can add resume download logic here
-                console.log('Download full resume');
-              }}
-            >
-              <span className="text-sm">Want to know more?</span>
-              <div className="text-lg">→</div>
-              <span className="text-sm font-medium">Download My Resume</span>
-            </motion.div>
-          </motion.div>
-        </motion.div>
+          <div className="md:col-span-8">
+            <ol className="divide-y divide-border border-y border-border">
+              {experience.map((role) => (
+                <li key={role.id} className="py-10">
+                  <FadeIn>
+                    <div className="flex flex-col gap-3 md:flex-row md:items-baseline md:justify-between md:gap-6">
+                      <h4 className="font-display text-2xl text-text md:text-3xl">
+                        {role.position}
+                      </h4>
+                      <div className="font-mono text-xs uppercase tracking-[0.18em] text-text-dim">
+                        {formatDate(role.startDate)} — {formatDate(role.endDate)}
+                      </div>
+                    </div>
+
+                    <ul className="mt-6 space-y-3">
+                      {role.description.map((line, i) => (
+                        <li
+                          key={i}
+                          className="grid grid-cols-[auto_1fr] gap-3 text-base leading-[1.6] text-text md:text-lg"
+                        >
+                          <span className="mt-2 block h-px w-4 bg-accent shrink-0" aria-hidden />
+                          <span>{line}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <ul className="mt-6 flex flex-wrap gap-2">
+                      {role.technologies.map((tech) => (
+                        <li
+                          key={tech}
+                          className="border border-border px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-text-muted"
+                        >
+                          {tech}
+                        </li>
+                      ))}
+                    </ul>
+                  </FadeIn>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
       </div>
     </section>
   );

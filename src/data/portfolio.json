@@ -1,0 +1,149 @@
+{
+  "personal": {
+    "name": "Lovish Sharma",
+    "title": "Full-stack engineer",
+    "subtitle": "Software engineer building scalable web platforms at Microchip, India.",
+    "email": "slovish11sharma@gmail.com",
+    "phone": "+91 97798 98119",
+    "location": "Bangalore, India",
+    "website": "https://lovish.dev/",
+    "linkedIn": "https://www.linkedin.com/in/lovish1sharma/",
+    "github": "https://github.com/Lovish141",
+    "bio": [
+      "I'm Lovish — a full-stack engineer based in Bangalore. At Microchip, I work on the search and discovery surfaces of microchip.com, where I lifted relevancy by 22% and built admin tooling in Vue.js + .NET that keeps the product catalog moving.",
+      "I care about systems that hold up under load, interfaces that don't waste a click, and writing the kind of code the next person on the team is happy to inherit. Outside work I tinker with side projects — recently a Spotify-to-YouTube playlist converter and a multi-country SaaS invoice platform."
+    ]
+  },
+  "skills": {
+    "frontend": [
+      { "name": "Vue.js", "atWork": true },
+      { "name": "JavaScript", "atWork": true },
+      { "name": "HTML", "atWork": true },
+      { "name": "CSS", "atWork": true },
+      { "name": "Next.js", "atWork": false },
+      { "name": "React.js", "atWork": false },
+      { "name": "TypeScript", "atWork": false },
+      { "name": "Bootstrap", "atWork": false },
+      { "name": "Material UI", "atWork": false }
+    ],
+    "backend": [
+      { "name": ".NET Framework", "atWork": true },
+      { "name": "Node.js", "atWork": false },
+      { "name": "Express.js", "atWork": false },
+      { "name": "Java", "atWork": false }
+    ],
+    "databases": [
+      { "name": "SQL Server", "atWork": true },
+      { "name": "MongoDB", "atWork": true },
+      { "name": "PostgreSQL", "atWork": false }
+    ],
+    "tooling": [
+      { "name": "Git", "atWork": true },
+      { "name": "GitHub", "atWork": true },
+      { "name": "PowerShell", "atWork": true },
+      { "name": "Lucidworks Fusion", "atWork": true }
+    ]
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": "SoundSwap",
+      "description": "Full-stack converter that turns Spotify playlists into YouTube Music with OAuth-backed cross-platform login, Express + MongoDB APIs for storage and track mapping, and a Tailwind UI for a clean responsive flow.",
+      "image": "/assets/images/soundswap.png",
+      "technologies": ["React.js", "Node.js", "Express", "MongoDB", "OAuth", "Spotify API", "Google API", "Tailwind CSS"],
+      "liveUrl": "https://sound-swap-frontend.vercel.app",
+      "githubUrl": "https://github.com/Lovish141/SoundSwap",
+      "featured": true,
+      "category": "Full Stack",
+      "role": "Full stack",
+      "year": 2024
+    },
+    {
+      "id": 2,
+      "title": "Invixy",
+      "description": "SaaS invoice management platform with multi-country tax logic (India, Canada, US). NextAuth role-based access lets owners, accountants, and employees manage invoices, clients, and products from dedicated dashboards.",
+      "image": "",
+      "technologies": ["Next.js", "Prisma", "PostgreSQL", "NextAuth.js", "Tailwind CSS"],
+      "liveUrl": "https://invixy.app",
+      "githubUrl": "https://github.com/Lovish141/invixy",
+      "featured": true,
+      "category": "Full Stack",
+      "role": "Full stack",
+      "year": 2025
+    },
+    {
+      "id": 3,
+      "title": "Daunku",
+      "description": "Frontend showcase for a furniture brand — responsive layouts, motion choreography, and a product gallery built without a backend.",
+      "image": "/assets/images/daunku.png",
+      "technologies": ["React.js", "Tailwind CSS", "Framer Motion"],
+      "liveUrl": "https://daunku.com",
+      "githubUrl": "https://github.com/Lovish141/daunku",
+      "featured": false,
+      "category": "Frontend",
+      "role": "Frontend",
+      "year": 2023
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "institution": "Chandigarh University",
+      "degree": "B.E. Computer Science",
+      "location": "Mohali, Punjab",
+      "startDate": "2020",
+      "endDate": "2024",
+      "gpa": "8.35/10.0",
+      "relevant": []
+    }
+  ],
+  "experience": [
+    {
+      "id": 1,
+      "company": "Microchip Technology India Pvt. Ltd.",
+      "position": "Software Engineer I",
+      "location": "Bangalore, India",
+      "startDate": "2024-07",
+      "endDate": "Present",
+      "description": [
+        "Lifted site-search relevancy by 22% by integrating Lucidworks Fusion, .NET APIs, and SQL Server, with a sharp drop in null-result queries.",
+        "Built and maintained admin applications in Vue.js, .NET, MongoDB, and SQL Server that streamline product-data management across categories.",
+        "Ideated and shipped TreeLink — a Vue.js + .NET app for creating and visualizing hierarchical product-category trees, improving catalog organization and discoverability."
+      ],
+      "technologies": ["Vue.js", ".NET", "SQL Server", "MongoDB", "Lucidworks Fusion", "JavaScript"]
+    },
+    {
+      "id": 2,
+      "company": "Microchip Technology India Pvt. Ltd.",
+      "position": "Software Engineer Intern",
+      "location": "Bangalore, India",
+      "startDate": "2024-01",
+      "endDate": "2024-07",
+      "description": [
+        "Wrote PowerShell automation that replaced manual data-insertion processes across product systems.",
+        "Built a search-analytics dashboard surfacing query trends and zero-result rates as actionable insights.",
+        "Closed bugs across frontend and backend modules, tightening stability, usability, and load times."
+      ],
+      "technologies": [".NET", "JavaScript", "PowerShell", "SQL Server"]
+    }
+  ],
+  "now": {
+    "building": "TreeLink — hierarchical category trees in Vue.js + .NET",
+    "reading": "Designing Data-Intensive Applications — Martin Kleppmann",
+    "listening": "Bonobo — Fragments",
+    "updatedAt": "2026-05-17"
+  },
+  "contact": {
+    "title": "Let's talk.",
+    "subtitle": "Working on something that needs a careful pair of hands? Tell me about it.",
+    "availability": "Available for select projects",
+    "calLink": "https://cal.com/lovish-sharma/30min?user=lovish-sharma"
+  },
+  "social": {
+    "github": { "url": "https://github.com/Lovish141", "icon": "github", "label": "GitHub" },
+    "linkedin": { "url": "https://www.linkedin.com/in/lovish1sharma/", "icon": "linkedin", "label": "LinkedIn" },
+    "twitter": { "url": "https://x.com/LovishS08693875", "icon": "twitter", "label": "Twitter" },
+    "email": { "url": "mailto:slovish11sharma@gmail.com", "icon": "email", "label": "Email" },
+    "phone": { "url": "tel:+919779898119", "icon": "phone", "label": "Phone" }
+  }
+}
