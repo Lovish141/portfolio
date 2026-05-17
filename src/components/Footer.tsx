@@ -26,12 +26,12 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   const reachLinks = [
-    { label: 'Email', href: `mailto:${personal.email}`, external: false },
+    { label: 'Email', href: personal.email ? `mailto:${personal.email}` : '', external: false },
     { label: 'Book a call', href: contact.calLink, external: true },
     { label: 'GitHub', href: social.github.url, external: true },
     { label: 'LinkedIn', href: social.linkedin.url, external: true },
     { label: 'Twitter / X', href: social.twitter.url, external: true },
-  ];
+  ].filter((l) => l.href);
 
   return (
     <footer className="relative border-t border-border bg-bg px-6 pb-10 pt-16 md:px-10 md:pt-20">
