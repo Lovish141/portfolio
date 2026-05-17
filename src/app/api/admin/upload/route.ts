@@ -6,7 +6,7 @@ export const runtime = 'nodejs';
 const MAX_IMAGE_BYTES = 3 * 1024 * 1024;
 const MAX_PDF_BYTES = 5 * 1024 * 1024;
 
-const RESUME_PATH = 'public/LovishSharma_FullStackEngineer_resume.pdf';
+const RESUME_PATH = 'public/LovishSharma_SoftwareEngineer_resume.pdf';
 
 function slug(s: string): string {
   return s
@@ -66,7 +66,7 @@ export async function POST(req: Request) {
 
   if (kind === 'resume') {
     path = RESUME_PATH;
-    publicPath = '/LovishSharma_FullStackEngineer_resume.pdf';
+    publicPath = '/LovishSharma_SoftwareEngineer_resume.pdf';
   } else {
     const ts = Date.now();
     const finalName = `${slug(filename)}-${ts}.${magic.ext}`;

@@ -10,7 +10,7 @@ import ImageUploader from '../_components/ImageUploader';
 import { useSaveSection } from '../_components/useSaveSection';
 import { useStagedSection } from '../_components/PendingChanges';
 
-const RESUME_PATH = '/LovishSharma_FullStackEngineer_resume.pdf';
+const RESUME_PATH = '/LovishSharma_SoftwareEngineer_resume.pdf';
 
 export default function PersonalEditor({ initial }: { initial: Personal }) {
   const staged = useStagedSection<Personal>('personal');
@@ -166,7 +166,7 @@ export default function PersonalEditor({ initial }: { initial: Personal }) {
             value={resumePath}
             kind="resume"
             onChange={(p) => setResumePath(p)}
-            hint="Always saved to /LovishSharma_FullStackEngineer_resume.pdf"
+            hint="Always saved to /LovishSharma_SoftwareEngineer_resume.pdf"
           />
           <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.18em] text-text-dim">
             Note: replacing the PDF is its own commit. The Save below only updates the personal fields.

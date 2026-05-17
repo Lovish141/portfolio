@@ -1,7 +1,7 @@
 {
   "personal": {
     "name": "Lovish Sharma",
-    "title": "Full-stack engineer",
+    "title": "Software engineer",
     "subtitle": "Software engineer building scalable web platforms at Microchip, India.",
     "email": "slovish11sharma@gmail.com",
     "phone": "+91 97798 98119",
@@ -10,7 +10,7 @@
     "linkedIn": "https://www.linkedin.com/in/lovish1sharma/",
     "github": "https://github.com/Lovish141",
     "bio": [
-      "I'm Lovish — a full-stack engineer based in Bangalore. At Microchip, I work on the search and discovery surfaces of microchip.com, where I lifted relevancy by 22% and built admin tooling in Vue.js + .NET that keeps the product catalog moving.",
+      "I'm Lovish — a software engineer based in Bangalore. At Microchip, I work on the search and discovery surfaces of microchip.com, where I lifted relevancy by 22% and built admin tooling in Vue.js + .NET that keeps the product catalog moving.",
       "I care about systems that hold up under load, interfaces that don't waste a click, and writing the kind of code the next person on the team is happy to inherit. Outside work I tinker with side projects — recently a Spotify-to-YouTube playlist converter and a multi-country SaaS invoice platform."
     ]
   },
