@@ -22,7 +22,7 @@ const Hero = () => {
       aria-labelledby="hero-heading"
     >
       {/* Main split */}
-      <div className="flex flex-1 flex-col gap-12 md:flex-row md:items-end md:gap-10 lg:gap-16">
+      <div className="mx-auto flex w-full max-w-[1400px] flex-1 flex-col gap-12 md:flex-row md:items-end md:gap-10 lg:gap-16">
         {/* LEFT: name + subhead + CTAs */}
         <div className="flex-1">
           <h1

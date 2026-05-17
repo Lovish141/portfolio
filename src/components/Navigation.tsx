@@ -73,11 +73,11 @@ const Navigation = () => {
         initial={{ y: -32, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed left-0 right-0 top-0 z-50 transition-colors duration-300 ${
+        className={`fixed left-0 right-0 top-0 z-50 px-6 md:px-10 transition-colors duration-300 ${
           scrolled ? 'bg-bg/75 backdrop-blur-md border-b border-border' : 'bg-transparent'
         }`}
       >
-        <div className="mx-auto grid w-full max-w-[1400px] grid-cols-2 items-center gap-4 px-6 py-4 md:grid-cols-3 md:px-10">
+        <div className="mx-auto grid w-full max-w-[1400px] grid-cols-2 items-center gap-4 py-4 md:grid-cols-3">
           {/* Left: logo monogram */}
           <button
             onClick={() => go('home')}
