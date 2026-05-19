@@ -122,7 +122,7 @@
       "featured": true,
       "category": "Full Stack",
       "role": "Full stack",
-      "year": 2024
+      "year": 2026
     },
     {
       "id": 1,
@@ -139,12 +139,12 @@
         "Google API",
         "Tailwind CSS"
       ],
-      "liveUrl": "https://sound-swap-frontend.vercel.app",
-      "githubUrl": "https://github.com/Lovish141/SoundSwap",
+      "liveUrl": "https://soundswap.lovish.dev/",
+      "githubUrl": "https://github.com/Lovish141/sound-swap",
       "featured": true,
       "category": "Full Stack",
       "role": "Full stack",
-      "year": 2024
+      "year": 2025
     },
     {
       "id": 3,
