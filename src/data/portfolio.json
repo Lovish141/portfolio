@@ -1,7 +1,7 @@
 {
   "personal": {
     "name": "Lovish Sharma_",
-    "title": "Software engineer",
+    "title": "Full-Stack Software Engineer",
     "subtitle": "Software Engineer building scalable web platforms at Microchip, India.",
     "email": "slovish11sharma@gmail.com",
     "phone": "+91 97798 98119",
@@ -10,7 +10,7 @@
     "linkedIn": "https://www.linkedin.com/in/lovish1sharma/",
     "github": "https://github.com/Lovish141",
     "bio": [
-      "I'm Lovish — a Software Engineer based in Bangalore with 1.5+ years of professional experience building and shipping production-grade web applications. At Microchip Technology, I engineer the search and discovery infrastructure for microchip.com: I improved site-search relevancy by 22%, reduced null-result queries near to zero, and delivered internal admin tooling in Vue.js and .NET that product teams across the globe use daily.",
+      "I'm Lovish, a Software Engineer based in Bangalore with 2+ years of professional experience building and shipping production-grade web applications. At Microchip Technology, I engineer the search and discovery infrastructure for microchip.com: I improved site-search relevancy by 22%, reduced null-result queries near to zero, and delivered internal admin tooling in Vue.js and .NET that product teams across the globe use daily.",
       "My work spans frontend development (Vue.js, React.js, Next.js), backend API design (.NET Framework, Node.js, Express.js), and database engineering (SQL Server, PostgreSQL, MongoDB). I write code that is readable, testable, and built to scale — the kind of codebase the next engineer on the team is glad to inherit. Outside of work I ship personal projects: a Spotify-to-YouTube playlist converter using OAuth 2.0 and REST APIs, and a multi-tenant SaaS invoice platform with role-based access control and multi-country tax logic."
     ]
   },
@@ -51,6 +51,10 @@
       {
         "name": "Material UI",
         "atWork": false
+      },
+      {
+        "name": "Tailwind CSS",
+        "atWork": false
       }
     ],
     "backend": [
@@ -68,6 +72,10 @@
       },
       {
         "name": "Java",
+        "atWork": false
+      },
+      {
+        "name": "Python",
         "atWork": false
       }
     ],
@@ -100,6 +108,14 @@
       },
       {
         "name": "Lucidworks Fusion",
+        "atWork": false
+      },
+      {
+        "name": "Azure DevOps",
+        "atWork": false
+      },
+      {
+        "name": "Docker",
         "atWork": false
       }
     ]
@@ -137,7 +153,8 @@
         "OAuth",
         "Spotify API",
         "Google API",
-        "Tailwind CSS"
+        "Tailwind CSS",
+        "YouTube API"
       ],
       "liveUrl": "https://soundswap.lovish.dev/",
       "githubUrl": "https://github.com/Lovish141/sound-swap",
@@ -162,6 +179,29 @@
       "category": "Frontend",
       "role": "Frontend",
       "year": 2023
+    },
+    {
+      "id": 4,
+      "title": "Patient Management System",
+      "description": "A full-stack, microservices-based patient management platform with a database-per-service architecture (Patient, Billing, Notification, and Auth services in Spring Boot). Implements synchronous gRPC calls between services, event-driven communication via Kafka with Protobuf serialization, centralized JWT authentication, and API Gateway routing. Cloud infrastructure is defined as code with AWS CDK and validated locally through LocalStack, with GitHub Actions automating Docker image builds across all microservices.",
+      "image": "",
+      "technologies": [
+        "Java",
+        "Spring Boot",
+        "gRPC",
+        "Kafka",
+        "PostgreSQL",
+        "JWT",
+        "AWS CDK",
+        "Docker",
+        "GitHub Actions"
+      ],
+      "liveUrl": "",
+      "githubUrl": "",
+      "featured": false,
+      "category": "Full Stack",
+      "role": "Full stack",
+      "year": 2026
     }
   ],
   "education": [
@@ -186,8 +226,12 @@
       "endDate": "Present",
       "description": [
         "Lifted site-search relevancy by 22% by integrating Lucidworks Fusion, .NET APIs, and SQL Server, with a sharp drop in null-result queries.",
-        "Built and maintained admin applications in Vue.js, .NET, MongoDB, and SQL Server that streamline product-data management across categories.",
-        "Ideated and shipped TreeLink — a Vue.js + .NET app for creating and visualizing hierarchical product-category trees, improving catalog organization and discoverability."
+        "Delivered and owned 3+ full-stack internal admin applications (Vue.js, .NET, MongoDB, SQL Server) — including the initial Azure DevOps CI/CD pipeline setup — cutting manual operational overhead by an estimated 40% company-wide.",
+        "Architected and shipped TreeLink, a Vue.js + .NET app for hierarchical product-category visualization, including a PWA offline mode that caches data locally and refreshes via ETag validation — letting product managers restructure category trees 3x faster than the prior manual process.",
+        "Migrated the frontend of Reliability Report, a public-facing Microchip web application, from Vue 2 to Vue 3, and continue to extend it with new sections and SQL Server-backed REST APIs.",
+        "Scaled backend APIs to handle 50K+ product SKUs at consistent sub-200ms response times by optimizing SQL Server query plans and introducing targeted indexing strategies.",
+        "Built an independent full-stack .NET and MongoDB app to retrieve 5,000+ block-diagram image assets via MongoDB Atlas Search full-text indexing with partial-match, keyword-order-agnostic matching, and pagination.",
+        "Prototyped a Python LLM chatbot proof-of-concept that classified user intent to scope responses to the relevant business unit, improving cross-functional query relevancy."
       ],
       "technologies": [
         "Vue.js",
@@ -195,7 +239,9 @@
         "SQL Server",
         "MongoDB",
         "Lucidworks Fusion",
-        "JavaScript"
+        "JavaScript",
+        "Azure DevOps",
+        "Python"
       ]
     },
     {
@@ -204,11 +250,11 @@
       "position": "Software Engineer Intern",
       "location": "Bangalore, India",
       "startDate": "2024-01",
-      "endDate": "2024-07",
+      "endDate": "2024-06",
       "description": [
-        "Wrote PowerShell automation that replaced manual data-insertion processes across product systems.",
-        "Built a search-analytics dashboard surfacing query trends and zero-result rates as actionable insights.",
-        "Closed bugs across frontend and backend modules, tightening stability, usability, and load times."
+        "Engineered PowerShell automation scripts for recurring ETL operations that eliminated 8+ hours per week of manual data-insertion work and cut the human error rate by over 90%.",
+        "Developed a real-time full-stack search analytics dashboard surfacing KPIs (click-through rate, zero-result rate, query volume), informing the data-driven tuning behind the team's subsequent 22% relevancy gain.",
+        "Resolved 15+ critical bugs across frontend and backend modules, improving page load times by 30%."
       ],
       "technologies": [
         ".NET",
