@@ -218,12 +218,24 @@
   ],
   "experience": [
     {
+      "id": 3,
+      "company": "Microchip Technology India Pvt. Ltd.",
+      "position": "Software Engineer II",
+      "location": "Bangalore, India",
+      "startDate": "2026-09",
+      "endDate": "Present",
+      "description": [
+        "Architected and shipped TreeLink, a Vue.js + .NET app for hierarchical product-category visualization, including a PWA offline mode that caches data locally and refreshes via ETag validation — letting product managers restructure category trees 3x faster than the prior manual process."
+      ],
+      "technologies": []
+    },
+    {
       "id": 1,
       "company": "Microchip Technology India Pvt. Ltd.",
       "position": "Software Engineer I",
       "location": "Bangalore, India",
       "startDate": "2024-07",
-      "endDate": "Present",
+      "endDate": "2026-08",
       "description": [
         "Lifted site-search relevancy by 22% by integrating Lucidworks Fusion, .NET APIs, and SQL Server, with a sharp drop in null-result queries.",
         "Delivered and owned 3+ full-stack internal admin applications (Vue.js, .NET, MongoDB, SQL Server) — including the initial Azure DevOps CI/CD pipeline setup — cutting manual operational overhead by an estimated 40% company-wide.",
